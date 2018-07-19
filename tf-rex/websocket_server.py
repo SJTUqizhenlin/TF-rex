@@ -6,6 +6,7 @@ import struct
 from base64 import b64encode
 from hashlib import sha1
 import logging
+import time 
 
 if sys.version_info[0] < 3 :
 	from socketserver import ThreadingMixIn, TCPServer, StreamRequestHandler
@@ -242,7 +243,10 @@ class WebSocketHandler(StreamRequestHandler):
 			raise Exception("Message is too big. Consider breaking it into chunks.")
 			return
 
-		self.request.send(header + payload)
+		try:
+			self.request.send(header + payload)
+		except:
+			time.sleep(3.5)
 
 	def handshake(self):
 		message = self.request.recv(1024).decode().strip()

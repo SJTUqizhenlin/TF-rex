@@ -16,7 +16,7 @@ num_actions = len(Environment.actions)
 ## Application flags
 tf.app.flags.DEFINE_string("logdir", "./logs/", "Path to store the model and tensorboard logs or restore the model")
 tf.app.flags.DEFINE_string("checkpoint_nr", None, "Checkpoint number of the model to restore")
-tf.app.flags.DEFINE_integer("checkpoint_hz", 200, "Creating a checkpoint every x epochs")
+tf.app.flags.DEFINE_integer("checkpoint_hz", 300, "Creating a checkpoint every x epochs")
 tf.app.flags.DEFINE_integer("refresh_hz", 100, "Reloading the browser every x epochs")
 tf.app.flags.DEFINE_integer("update_target_network_hz", 20, "Reloading the browser every x epochs")
 tf.app.flags.DEFINE_boolean("training", True, "Train a new model")
