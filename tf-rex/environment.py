@@ -96,9 +96,9 @@ class Environment:
             reward = -100.
         else:
             if action == Action.UP:
-                reward = -5.
+                reward = -4.
             elif action == Action.DOWN:
-                reward = -3.
+                reward = -4.
             else:
                 reward = 1.
 
